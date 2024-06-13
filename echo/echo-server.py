@@ -12,7 +12,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     with conn:
         print(f"Connection at the {add}")
         while True:
-            data = conn.recv(1)
+            data = conn.recv(1024)
             if not data:
                 break
             conn.sendall(data)
